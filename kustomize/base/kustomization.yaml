@@ -27,3 +27,5 @@ resources:
 - recommendationservice.yaml
 - redis.yaml
 - shippingservice.yaml
+- persistentvolumeclaim.yaml
+

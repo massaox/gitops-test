@@ -62,7 +62,8 @@ spec:
             memory: 200Mi
       volumes:
       - name: redis-data
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName: redis-cart-data
 ---
 apiVersion: v1
 kind: Service
