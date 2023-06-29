@@ -1,0 +1,27 @@
+---
+name: kustomize-yaml-lint
+on:
+  push:
+    branches-ignore:
+      - master
+    paths:
+      - 'kustomize/base/**'
+      - '.github/workflows/kustomize-yaml-lint.yaml'
+  pull_request:
+    paths:
+      - 'kustomize/**'
+      - '.github/workflows/kustomize-yaml-lint.yaml'
+jobs:
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: yaml-lint
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: kustomize/base/
+          config_data: |
+            extends: default
+            rules:
+              line-length: disable
+              document-start: disable
