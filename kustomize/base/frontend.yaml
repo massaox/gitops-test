@@ -27,6 +27,7 @@ spec:
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
+      replicas: 2
       serviceAccountName: default
       securityContext:
         fsGroup: 1000
