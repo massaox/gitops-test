@@ -44,7 +44,7 @@ jobs:
         run: |
           # Test related to https://medium.com/google-cloud/b5bd26253a4c
           cd helm-chart/
-          SPANNER_CONNECTION_STRING=projects/PROJECT_ID/instances/SPANNER_INSTANCE_NAME/databases/SPANNER_DATABASE_NAME
+          SPANNER_CONNECTION_STRING=projects/raftest1-rafaeltanaka/instances/SPANNER_INSTANCE_NAME/databases/SPANNER_DATABASE_NAME
           helm template . \
             --set nativeGrpcHealthCheck=true \
             -n onlineboutique \
@@ -55,7 +55,7 @@ jobs:
         run: |
           # Test related to https://medium.com/google-cloud/f7248e077339
           cd helm-chart/
-          SPANNER_CONNECTION_STRING=projects/PROJECT_ID/instances/SPANNER_INSTANCE_NAME/databases/SPANNER_DATABASE_NAME
+          SPANNER_CONNECTION_STRING=projects/raftest1-rafaeltanaka/instances/SPANNER_INSTANCE_NAME/databases/SPANNER_DATABASE_NAME
           SPANNER_DB_USER_GSA_ID=spanner-db-user@my-project.iam.gserviceaccount.com
           helm template . \
             --set cartDatabase.inClusterRedis.create=false \

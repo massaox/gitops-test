@@ -39,8 +39,8 @@ patchesStrategicMerge:
               value: ALLOYDB_TABLE_NAME_VAL
             - name: ALLOYDB_SECRET_NAME
               value: ALLOYDB_SECRET_NAME_VAL
-            - name: PROJECT_ID
-              value: PROJECT_ID_VAL
+            - name: raftest1-rafaeltanaka
+              value: raftest1-rafaeltanaka_VAL
 # cartservice - add the GSA annotation for the cartservice KSA
 - |-
   apiVersion: v1
