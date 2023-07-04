@@ -42,7 +42,7 @@ spec:
         seccompProfile:
           type: {{ .Values.seccompProfile.type }}
         {{- end }}
-      {{- if eq .Values.opentelemetryCollector.projectId "PROJECT_ID" }}
+      {{- if eq .Values.opentelemetryCollector.projectId "raftest1-rafaeltanaka" }}
       initContainers:
       # Init container retrieves the current cloud project id from the metadata server
       # and inserts it into the collector config template
@@ -60,7 +60,7 @@ spec:
         - '/bin/sh'
         - '-c'
         - |
-           sed "s/PROJECT_ID/$(curl -H 'Metadata-Flavor: Google' http://metadata.google.internal/computeMetadata/v1/project/project-id)/" /template/collector-gateway-config-template.yaml >> /conf/collector-gateway-config.yaml
+           sed "s/raftest1-rafaeltanaka/$(curl -H 'Metadata-Flavor: Google' http://metadata.google.internal/computeMetadata/v1/project/project-id)/" /template/collector-gateway-config-template.yaml >> /conf/collector-gateway-config.yaml
         volumeMounts:
         - name: collector-gateway-config-template
           mountPath: /template

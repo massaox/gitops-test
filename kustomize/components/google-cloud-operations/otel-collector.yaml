@@ -49,7 +49,7 @@ spec:
         - '/bin/sh'
         - '-c'
         - |
-           sed "s/{{PROJECT_ID}}/$(curl -H 'Metadata-Flavor: Google' http://metadata.google.internal/computeMetadata/v1/project/project-id)/" /template/collector-gateway-config-template.yaml >> /conf/collector-gateway-config.yaml
+           sed "s/{{raftest1-rafaeltanaka}}/$(curl -H 'Metadata-Flavor: Google' http://metadata.google.internal/computeMetadata/v1/project/project-id)/" /template/collector-gateway-config-template.yaml >> /conf/collector-gateway-config.yaml
         volumeMounts:
         - name: collector-gateway-config-template
           mountPath: /template
@@ -113,7 +113,7 @@ data:
     processors:
     exporters:
       googlecloud:
-        project: {{PROJECT_ID}}
+        project: {{raftest1-rafaeltanaka}}
     service:
       pipelines:
         traces:
